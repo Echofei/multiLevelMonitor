@@ -22,7 +22,7 @@ class JuniorCenterComponent extends React.Component {
                             <Col>
                                 <div className="box">
                                 <div className='junior1'>{item.centerName}</div>
-                                <div className="img">img</div>
+                                <div className="img">1</div>
                                 </div>
                             </Col>
                             <Col span={7} className="module">

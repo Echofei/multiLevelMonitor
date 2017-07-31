@@ -233,24 +233,11 @@ export default class EchartsPie extends React.Component {
                     value: 0,
                     label: {
                         normal: {
-                            formatter: data.data,
+                            formatter: '47.3%',
                             textStyle: {
                                 color: '#fe8b53',
                                 fontSize: 18,
                                 fontWeight: 'bold'
-                            }
-                        }
-                    }
-                }, {
-                    tooltip: {
-                        show: false
-                    },
-                    label: {
-                        normal: {
-                            //formatter: '\n使用率',
-                            textStyle: {
-                                color: '#bbeaf9',
-                                fontSize: 10
                             }
                         }
                     }

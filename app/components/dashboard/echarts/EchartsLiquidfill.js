@@ -91,7 +91,7 @@ export default class EchartsLiquidfill extends React.Component {
                 label: {
                     normal: {
                         textStyle: {
-                            color: 'red',
+                            color: 'white',
                             //insideColor: 'red',
                             fontSize: 18,
                             }

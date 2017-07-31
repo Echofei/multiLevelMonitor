@@ -11,7 +11,7 @@
     /*0px 2px 0px #888, 0px 3px 0px #777,*/
     /*0px 4px 0px #666*/
 }
-.body{
+body{
     background: url(1.JPG);
     z-index: -1;
 }
