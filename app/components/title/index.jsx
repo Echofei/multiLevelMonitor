@@ -9,18 +9,12 @@ class Title extends React.Component {
     }
     render() {
         return (
-            <div className="title">
-                <Row>
-                    <Col span={8} className='titleIn'>
-                        <span>保障关系</span>
-                    </Col>
-                    <Col span={8} className='titleIn'>
-                        <span>资源状态</span>
-                    </Col>
-                    <Col span={8} className='titleIn'>
-                        <span>资源态势</span>
-                    </Col>
-                </Row>
+            <div className="header-title">
+                <div className="title-div">
+                    <span className="left-button"></span>
+                    <span className="mid-button">资源状态</span>
+                    <span className="right-button"></span>
+                </div>
             </div>
         );
     }

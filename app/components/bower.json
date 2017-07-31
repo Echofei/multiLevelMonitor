@@ -1,0 +1,20 @@
+{
+  "name": "bower commponents",
+  "homepage": "https://github.com/xqliu0/mine",
+  "authors": [
+    "xqliu0 <15029039332@163.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
