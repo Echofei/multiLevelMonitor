@@ -41,11 +41,11 @@ module.exports = {
         {
             id:'memoryInfoT',
             max:[
-                {name:'used',max:7000},
-                {name:'free',max:7000},
-                {name:'shared',max:7000},
-                {name:'buffersBuffer',max:7000},
-                {name:'cachedPage',max:7000},
+                {name:'已用',max:7000},
+                {name:'空闲',max:7000},
+                {name:'共享',max:7000},
+                {name:'缓冲区',max:7000},
+                {name:'缓存页',max:7000},
             ],
             data:[{
                 value:[3000,4000,100,1000,1000],
