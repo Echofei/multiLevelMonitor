@@ -35,7 +35,7 @@ export default class EchartsGauge extends React.Component {
                     name:'速度',
                     type:'gauge',
                     min:0,
-                    max:10000,
+                    max:100,
                     splitNumber:10,
                     axisLine: {            // 坐标轴线
                         lineStyle: {       // 属性lineStyle控制线条样式
@@ -50,7 +50,8 @@ export default class EchartsGauge extends React.Component {
                             fontWeight: 'bolder',
                             color: '#fff',
                             shadowColor : '#fff', //默认透明
-                            shadowBlur: 10
+                            shadowBlur: 10,
+							fontSize:15
                         }
                     },
                     axisTick: {            // 坐标轴小标记
@@ -96,7 +97,7 @@ export default class EchartsGauge extends React.Component {
                             color: '#fff'
                         }
                     },
-                    data:[{value: data, name: 'km/h'}]
+                    data:[{value: data, name: '%'}]
                 }
             ]
         }

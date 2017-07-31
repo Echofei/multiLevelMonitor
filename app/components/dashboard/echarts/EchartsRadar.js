@@ -43,7 +43,7 @@ export default class EchartsRadar extends React.Component {
             radar: {
                 // shape: 'circle',
                 indicator: radardata.max,
-                center: ['37%', '50%'],
+                center: ['47%', '50%'],
                 radius: 95,
                 //shape: 'circle',
                 name: {
