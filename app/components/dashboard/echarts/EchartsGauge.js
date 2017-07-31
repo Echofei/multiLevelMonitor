@@ -23,9 +23,9 @@ export default class EchartsGauge extends React.Component {
         const id = this.props.data.id;
         return (
             <div>
-                <div id={id} style={{width: "100%", height: "280px"}}></div>
-            </div>
-        )
+            <div id={id} style={{width: "100%", height: "280px"}}></div>
+        </div>
+    )
     }
     //一个基本的echarts图表配置函数
     setGaugeOption(data) {
@@ -39,7 +39,7 @@ export default class EchartsGauge extends React.Component {
                     splitNumber:10,
                     axisLine: {            // 坐标轴线
                         lineStyle: {       // 属性lineStyle控制线条样式
-                            color: [[0.2, 'lime'],[0.8, '#1e90ff'],[1, '#ff4500']],
+                            color: [[0.2, '#B2EAF0'],[0.8, '#40AFE5'],[1, '#FA5F29']],
                             width: 3,
                             shadowColor : '#fff', //默认透明
                             shadowBlur: 10
@@ -54,7 +54,7 @@ export default class EchartsGauge extends React.Component {
                         }
                     },
                     axisTick: {            // 坐标轴小标记
-                        length :15,        // 属性length控制线长
+                        length :10,        // 属性length控制线长
                         lineStyle: {       // 属性lineStyle控制线条样式
                             color: 'auto',
                             shadowColor : '#fff', //默认透明
@@ -62,7 +62,7 @@ export default class EchartsGauge extends React.Component {
                         }
                     },
                     splitLine: {           // 分隔线
-                        length :25,         // 属性length控制线长
+                        length :20,         // 属性length控制线长
                         lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
                             width:3,
                             color: '#fff',
@@ -85,12 +85,12 @@ export default class EchartsGauge extends React.Component {
                         }
                     },
                     detail : {
-                        backgroundColor: 'rgba(30,144,255,0.8)',
-                        borderWidth: 1,
-                        borderColor: '#fff',
+                        //backgroundColor: 'rgba(30,144,255,0.8)',
+                        //borderWidth: 1,
+                        //borderColor: '#fff',
                         shadowColor : '#fff', //默认透明
                         shadowBlur: 5,
-                        // offsetCenter: [0, '50%'],       // x, y，单位px
+                        offsetCenter: [-5, '50%'],       // x, y，单位px
                         textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
                             fontWeight: 'bolder',
                             color: '#fff'

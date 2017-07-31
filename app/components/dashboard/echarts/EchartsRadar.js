@@ -34,13 +34,26 @@ export default class EchartsRadar extends React.Component {
     setRadarOption(radardata) {
         return {
             title: {
-                text: '内存指标'
+                text: '内存指标',
+                textStyle:{
+                    color:'#86BFBF'
+                }
             },
             tooltip: {},
             radar: {
                 // shape: 'circle',
-                indicator: radardata.max
+                indicator: radardata.max,
+                center: ['37%', '50%'],
+                radius: 95,
+                //shape: 'circle',
+                name: {
+                    textStyle: {
+                        // color: '#ff1E1F',
+                        fontSize:9,
+                    }
+                },
             },
+
             series: [{
                 name: '预算 vs 开销（Budget vs spending）',
                 type: 'radar',
