@@ -12,21 +12,21 @@ class ServiceProcess extends React.Component {
     }
     render() {
         return (
-            <div>
-                <Row>
-                {this.props.data.data.map((item,index)=>{
+            <div className="title1">
+            <Row>
+            {this.props.data.data.map((item,index)=>{
                 let keyF = '0'+ index;
-                return <Col span={6} key={keyF}>
-                        <p key={index}>{item.ServiceName}</p>
-                        {item.list.map((name,ind)=>{
-                            let keyNub = (index+1)*10+ind;
-                        return <p key={keyNub}>{name}</p>
-                        })}
-                    </Col>
-                })}
-                </Row>
-            </div>
-        );
+        return <Col span={6} key={keyF}>
+            <p className="title2" key={index}>{item.ServiceName}</p>
+        {item.list.map((name,ind)=>{
+            let keyNub = (index+1)*10+ind;
+        return <div className="title3" key={keyNub}>{name}</div>
+    })}
+    </Col>
+    })}
+    </Row>
+        </div>
+    );
     }
 }
 
