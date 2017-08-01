@@ -7,18 +7,20 @@ import 'echarts/lib/component/visualMap';
 export default class EchartsHeatmap extends React.Component {
     constructor(props) {
         super(props);
+        this.setHeatmapOption = this.setHeatmapOption.bind(this);
+        this.initHeatmap = this.initHeatmap.bind(this)
+    }
+    initHeatmap() {
+        const data = this.props.data;
+        let myChart = echarts.init(document.getElementById(data.id));
+        let options = this.setHeatmapOption(this.props.data);
+        myChart.setOption(options)
     }
     componentDidMount() {
-        const data = this.props.data;
-        this.myChart = echarts.init(document.getElementById(data.id));
-        let options = this.setHeatmapOption(this.props.data);
-        this.myChart.setOption(options)
+        this.initHeatmap()
     }
     componentDidUpdate() {
-        if(this.myChart){
-        let options = this.setHeatmapOption(this.props.data);
-        this.myChart.setOption(options)
-        }
+        this.initHeatmap()
     }
     render() {
         const id =this.props.data.id;
