@@ -9,18 +9,20 @@ import 'echarts/lib/component/title';
 export default class EchartsRadar extends React.Component {
     constructor(props) {
         super(props);
+        this.setRadarOption = this.setRadarOption.bind(this);
+        this.initRadar = this.initRadar.bind(this)
+    }
+    initRadar() {
+        const data =this.props.data;
+        let myChart = echarts.init(document.getElementById(data.id));
+        let options = this.setRadarOption(this.props.data);
+        myChart.setOption(options)
     }
     componentDidMount() {
-        const data =this.props.data;
-        this.myChart = echarts.init(document.getElementById(data.id));
-        let options = this.setRadarOption(this.props.data);
-        this.myChart.setOption(options)
+        this.initRadar()
     }
     componentDidUpdate() {
-        if(this.myChart) {
-            let options = this.setRadarOption(this.props.data);
-            this.myChart.setOption(options)
-        }
+        this.initRadar()
     }
     render() {
         const id=this.props.data.id

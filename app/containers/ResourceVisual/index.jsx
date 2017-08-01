@@ -16,13 +16,12 @@ class ResourceVisual extends React.Component {
         this.state = {
             treeDate: [],
             dashboard: {},
-            juniorCenter: {},
-            initCenter:'king'
+            juniorCenter: {}
         }
     }
     render() {
         return (
-            <div>
+            <div className="bg">
                 <Row>
                     <Col span={24}><Title/></Col>
                 </Row>
@@ -31,8 +30,7 @@ class ResourceVisual extends React.Component {
                     <Col span={6}>
                         {
                             this.state.treeDate.length
-                            ? <TreeSelectComponent treeDate={this.state.treeDate}
-                              changeCenterFn={this.changeCenter.bind(this)}/>
+                            ? <TreeSelectComponent treeDate={this.state.treeDate}/>
                             : ''
                         }
                     </Col>
@@ -61,11 +59,25 @@ class ResourceVisual extends React.Component {
             </div>
         );
     }
+    componentDidMount() {
+        // 获取目录树数据
+        const getTreeDataResult = getTreeData();
+        getTreeDataResult.then(res => {
+            return res.json()
+        }).then(json => {
+            // 处理获取的数据
+            const data = json.data;
+            if (data) {
+                this.setState({
+                    treeDate: data
+                })
+            }
+        }).catch(ex => {
+                console.error('获取目录树数据报错, ', ex.message)
+        });
 
-    //获取仪表盘数据
-    dashDateFn(currentDate){
         // 获取仪表盘数据
-        const getDashboardResult = getDashboard(currentDate);
+        const getDashboardResult = getDashboard();
         getDashboardResult.then(res => {
             return res.json()
         }).then(json => {
@@ -78,12 +90,11 @@ class ResourceVisual extends React.Component {
             }
         }).catch(ex => {
             // 发生错误
-            console.error('获取仪表盘数据报错, ', ex.message)
+                console.error('获取仪表盘数据报错, ', ex.message)
         });
-    }
-    //获取下级目录数据
-    juniorCenterDateFn(currentDate){
-        const getJuniorCenterResult = getJuniorCenter(currentDate);
+
+        // 获取下级中心数据
+        const getJuniorCenterResult = getJuniorCenter();
         getJuniorCenterResult.then(res => {
             return res.json()
         }).then(json => {
@@ -96,39 +107,8 @@ class ResourceVisual extends React.Component {
             }
         }).catch(ex => {
             // 发生错误
-            console.error('获取下级中心数据, ', ex.message)
+                console.error('获取下级中心数据, ', ex.message)
         })
-    }
-
-    componentWillMount() {
-        const getTreeDataResult = getTreeData();
-        getTreeDataResult.then(res => {
-            return res.json()
-        }).then(json => {
-            // 处理获取的数据
-            const data = json.data;
-            if (data) {
-                this.setState({
-                    treeDate: data,
-                    initCenter:data[0].value
-                });
-                //获取多级中心目录树数据最上层的中心，作为默认值；
-                this.dashDateFn(data[0].value);
-                this.juniorCenterDateFn(data[0].value);
-            }
-        }).catch(ex => {
-            console.error('获取目录树数据报错, ', ex.message)
-        });
-    }
-    //更改当前中心
-    changeCenter(currentCenter){
-        if(this.state.initCenter != currentCenter){
-            this.dashDateFn(currentCenter);
-            this.juniorCenterDateFn(currentCenter);
-            this.setState({
-                initCenter:currentCenter
-            })
-        }
     }
 }
 

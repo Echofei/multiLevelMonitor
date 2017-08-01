@@ -14,20 +14,22 @@ import 'echarts/lib/component/legend';
 export default class EchartsPie extends React.Component {
     constructor(props) {
         super(props);
+        this.setPieOption = this.setPieOption.bind(this);
+        this.initPie = this.initPie.bind(this)
+    }
+    initPie() {
+        const data=this.props.data;
+        let myChart = echarts.init(document.getElementById(data.id));
+        let options = this.setPieOption(this.props.data);
+        myChart.setOption(options)
     }
 
     componentDidMount() {
-        const data=this.props.data;
-        this.myChart = echarts.init(document.getElementById(data.id));
-        let options = this.setPieOption(this.props.data);
-        this.myChart.setOption(options)
+        this.initPie()
     }
 
     componentDidUpdate() {
-        if(this.myChart) {
-            let options = this.setPieOption(this.props.data);
-            this.myChart.setOption(options)
-        }
+        this.initPie()
     }
 
     render() {

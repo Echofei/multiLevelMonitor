@@ -4,7 +4,7 @@ const webpack = require('webpack');
 
 module.exports = {
   context: path.join(__dirname),
-  devtool: 'source-map',
+  devtool: 'cheap-source-map',
   entry:  "./app/index.jsx",
   output: {
     path: path.join(__dirname, './'),

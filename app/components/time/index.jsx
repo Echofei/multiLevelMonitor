@@ -10,7 +10,7 @@ class Time extends React.Component {
   }
   render() {
     return (
-            <div>
+              <div className="bg3">
               <RangePicker
                   showTime={{ format: 'HH:mm' }}
                   format="YYYY-MM-DD HH:mm"
