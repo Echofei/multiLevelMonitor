@@ -1,0 +1,15 @@
+.general-info-list{
+    margin:10px 50px;
+}
+.general-info-list li{
+    line-height: 24px;
+}
+.general-info-list li span{
+    display: inline-block;
+    width:80px;
+    color: #b3ffff;
+}
+.general-info-list li p{
+    display: inline-block;
+    color: #fff;
+}

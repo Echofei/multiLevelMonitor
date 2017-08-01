@@ -1,0 +1,28 @@
+body {
+    background: #000000;
+}
+
+.info-virtual {
+    border: 8px solid transparent;
+    -webkit-border-image: url('../../static/image/left-bg.jpg') 8 8 stretch;
+    -moz-border-image: url('../../static/image/left-bg.jpg') 8 8 stretch;;
+    -o-border-image: url('../../static/image/left-bg.jpg') 8 8 stretch;
+    border-image: url('../../static/image/left-bg.jpg') 8 8 stretch;
+}
+
+.panel-title {
+    background: #000;
+    font-size:18px;
+    color: #b3ffff;
+    text-align: center;
+}
+.sub-title{
+    width:160px;
+    height:30px;
+    margin: 0 auto;
+    line-height:30px;
+    text-align:center;
+    color: #b3ffff;
+    border-top: 2px solid #16def5;
+    border-bottom: 1px solid #00a2ae;
+}

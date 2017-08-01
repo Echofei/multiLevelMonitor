@@ -2,7 +2,7 @@ import React from 'react';
 import { Router, Route, IndexRoute } from 'react-router';
 
 import App from '../containers';
-//import VirtualRoom from '../containers/VirtualRoom';
+import VirtualRoom from '../containers/VirtualRoom';
 //import SituationVisual from '../containers/SituationVisual';
 //import ResourceCollect from '../containers/ResourceCollect';
 //import UserAuthority from '../containers/UserAuthority';
@@ -10,7 +10,7 @@ import App from '../containers';
 //import InfoManage from '../containers/InfoManage';
 //import EquipmentManage from '../containers/EquipmentManage';
 //import SimulationVerify from '../containers/SimulationVerify';
-import ResourceVisual from '../containers/ResourceVisual';
+//import ResourceVisual from '../containers/ResourceVisual';
 //import ResourceDispose from '../containers/ResourceDispose';
 //import UnusualAlert from '../containers/UnusualAlert';
 import NotFound from '../containers/404';
@@ -23,7 +23,7 @@ class RouterMap extends React.Component {
     return (
             <Router history={this.props.history}>
                 <Route path='/' component={App}>
-                    <IndexRoute component={ResourceVisual}/>
+                    <IndexRoute component={VirtualRoom}/>
                     {/*<Route path='/VirtualRoom' component={VirtualRoom}/>
                     <Route path='/ResourceCollect' component={ResourceCollect}/>
                     <Route path='/UserAuthority' component={UserAuthority}/>
