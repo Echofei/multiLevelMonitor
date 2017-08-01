@@ -8,12 +8,12 @@ export function getTreeData() {
     return result
 }
 
-export function getDashboard(center) {
-    const result = get('http://localhost:8888/ResourceVisual/dashboard/' + center);
+export function getDashboard() {
+    const result = get('http://localhost:8888/ResourceVisual/dashboard');
     return result
 }
 
-export function getJuniorCenter(currentCenter) {
-    const result = get('http://localhost:8888/ResourceVisual/juniorCenter/' + currentCenter);
+export function getJuniorCenter() {
+    const result = get('http://localhost:8888/ResourceVisual/juniorCenter');
     return result
 }
