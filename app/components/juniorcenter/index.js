@@ -1,6 +1,7 @@
 /**
  * Created by kingwubin on 2017/7/18.
  */
+import './style.less'
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {Row,Col} from 'antd';
@@ -14,42 +15,48 @@ class JuniorCenterComponent extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="container">
                 {this.props.juniorCenterDate.map((item,index)=>{
                     return <div style={{width: "100%", height: "280px"}} key={index}>
                         <Row>
-                            <Col span={8}>
-                                <div>
+                            <Col>
+                                <div className="box">
+                                <div className='junior1'>{item.centerName}</div>
+                                <div className="img">1</div>
+                                </div>
+                            </Col>
+                            <Col span={7} className="module">
+                                <div className="content">
                                     CPU核数
                                 </div>
-                                <div>
+                                <div className="num">
                                     {item.centerInfo.CPUNum}
                                 </div>
                             </Col>
-                            <Col span={8}>
-                                <div>
+                            <Col span={7} className="module">
+                                <div className="content">
                                     CPU使用率
                                 </div>
-                                <div>
-                                    {item.centerInfo.CPUUser}
+                                <div className="num">
+                                    {item.centerInfo.CPUUser}%
                                 </div>
                             </Col>
-                            <Col span={8}>
-                                <div>
+                            <Col span={7} className="module">
+                                <div className="content">
                                     服务器总数
                                 </div>
-                                <div>
+                                <div className="num">
                                     {item.centerInfo.serverNum}
                                 </div>
                             </Col>
                         </Row>
                         <Row>
-                            <Col span={12}>
+                            <Col span={12} className="module1">
                                 {
                                 item.centerInfo.diskUser ? <EchartsPie data={item.centerInfo.diskUser}/>:''
                                 }
                             </Col>
-                            <Col span={12}>
+                            <Col span={12} className="module1">
                                 {
                                 item.centerInfo.memory ? <EchartsLiquidfill data={item.centerInfo.memory}/>:''
                                 }

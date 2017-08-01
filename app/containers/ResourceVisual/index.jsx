@@ -21,23 +21,27 @@ class ResourceVisual extends React.Component {
     }
     render() {
         return (
+<<<<<<< HEAD
             <div className="bg">
+=======
+            <div className="body">
+>>>>>>> 8b75128681fcf03a2e78b6feaad01c4b83938f8d
                 <Row>
                     <Col span={24}><Title/></Col>
                 </Row>
                 <Row style={{height:'60px'}}>
                     <Col span={7} className='administer'>管辖中心概括</Col>
-                    <Col span={6}>
+                    <Col span={6} className="manager">
                         {
                             this.state.treeDate.length
                             ? <TreeSelectComponent treeDate={this.state.treeDate}/>
                             : ''
                         }
                     </Col>
-                    <Col span={7}>
+                    <Col span={6} className="time">
                         <Time/>
                     </Col>
-                    <Col span={4}>下级中心</Col>
+                    <Col span={5} className='junior'>下级中心</Col>
                 </Row>
                 <Row>
                     <Col span={19}>
@@ -48,7 +52,7 @@ class ResourceVisual extends React.Component {
                         }
 
                     </Col>
-                    <Col span={5}>
+                    <Col span={5} className='bgi'>
                         {
                             this.state.juniorCenter.length
                                 ? <JuniorCenter juniorCenterDate={this.state.juniorCenter}/>
